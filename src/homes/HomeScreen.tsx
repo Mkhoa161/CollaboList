@@ -9,13 +9,18 @@ import { fontFamilies } from '../constants/fontFamilies'
 import TitleComponent from '../components/TitleComponent'
 import { colors } from '../constants/colors'
 import CardComponent from '../components/CardComponent'
+import { ColorSwatch, Element4, Notification, SearchNormal1 } from 'iconsax-react-native'
+import IonIcons from 'react-native-vector-icons/Ionicons'
+import TagComponent from '../components/TagComponent'
+import SpaceComponent from '../components/SpaceComponent'
 
 const HomeScreen = () => {
   return (
     <Container>
         <SectionComponent>
             <RowComponent justify='space-between'>
-                <TextComponent text='Hello my name is Khoa' />
+                <Element4 size={24} color={colors.desc}/>
+                <Notification size={24} color={colors.desc}/>
             </RowComponent>
         </SectionComponent>    
         <SectionComponent>
@@ -26,8 +31,8 @@ const HomeScreen = () => {
             <RowComponent 
                 styles={[globalStyles.inputContainer]} 
                 onPress={() => console.log("Say hi")}>
-                <TextComponent text='Search'/>
-                <Text>S</Text>
+                <TextComponent color='#696B6F' text='Search task'/>
+                <SearchNormal1 size={20} color={colors.desc}/>
             </RowComponent>
         </SectionComponent>  
         <SectionComponent>
@@ -36,7 +41,10 @@ const HomeScreen = () => {
                     <View style={{flex: 1}}>
                         <TitleComponent text='Task progress'/>
                         <TextComponent text='30/40 tasks done'/>
-                        <TextComponent text="Tag"/>
+                        <SpaceComponent height={12}/>
+                        <RowComponent justify='flex-start'>
+                            <TagComponent text='March 22'/>
+                        </RowComponent>
                     </View>
                     <View>
                         <TextComponent text='CircleChar'/>

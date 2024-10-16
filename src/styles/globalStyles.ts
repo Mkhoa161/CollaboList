@@ -33,4 +33,11 @@ export const globalStyles = StyleSheet.create({
         paddingHorizontal: Platform.OS === 'ios' ? 12 : 10,
         paddingVertical: Platform.OS === 'ios' ? 12 : 10,
     },
+
+    tag: {
+        paddingHorizontal: 20,
+        paddingVertical: 4,
+        borderRadius: 100,
+        backgroundColor: colors.blue,
+    },
 });

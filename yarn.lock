@@ -2583,6 +2583,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-native-vector-icons@npm:^6.4.18":
+  version: 6.4.18
+  resolution: "@types/react-native-vector-icons@npm:6.4.18"
+  dependencies:
+    "@types/react": "*"
+    "@types/react-native": ^0.70
+  checksum: 1ef458cb5e7a37f41eb400e3153940b1b152e4df76a7c06c7a47c712dbfe46e14b9999f04dde1bd074f338f850e161c6c925174ddea33386b74f8112c940065b
+  languageName: node
+  linkType: hard
+
+"@types/react-native@npm:^0.70":
+  version: 0.70.19
+  resolution: "@types/react-native@npm:0.70.19"
+  dependencies:
+    "@types/react": "*"
+  checksum: 79b504fa56340631079e7c20ea0d9412ec14147b76d0ce189f4403936f529ef1e6fd031383afab117846c5ae039123bcf3afc948bae4432269c6780282726f71
+  languageName: node
+  linkType: hard
+
 "@types/react-test-renderer@npm:^18.0.0":
   version: 18.3.0
   resolution: "@types/react-test-renderer@npm:18.3.0"
@@ -4119,9 +4138,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.28":
-  version: 1.5.36
-  resolution: "electron-to-chromium@npm:1.5.36"
-  checksum: 1f83daebdf88dd4817565660fa68a827bdca2866032d4902bfd79c6f16d97acbd731b63c09029dd5aa1af4aadbe567834cf3c89b52a37602d375352185d68cf4
+  version: 1.5.38
+  resolution: "electron-to-chromium@npm:1.5.38"
+  checksum: 8279317608f24f95366b679703c7e4196beb0702384fca211a5db4a53e6c960067d0f5de487883fe807b04eaba3939137a39958d6c5209b4d1e5a693efdd6f6a
   languageName: node
   linkType: hard
 
@@ -4865,9 +4884,9 @@ __metadata:
   linkType: hard
 
 "flow-parser@npm:0.*":
-  version: 0.248.0
-  resolution: "flow-parser@npm:0.248.0"
-  checksum: 683a58770801b0f5d3c9243380fd7c5d192895389fb622a2262d3838c9dbaa9a40143264fdf1a48c0a30958dc46049f71f2b5a2282e5c726a34b96beb36d119b
+  version: 0.248.1
+  resolution: "flow-parser@npm:0.248.1"
+  checksum: 6773d567ee731312fe58ec97353415f963d6c1c59458fbbc2f42315eb458e0702f9be9cf2e7d88fc1d7d08d11adb75e27b1622ef2e78afb8fc792a9b7a18a734
   languageName: node
   linkType: hard
 
@@ -8990,6 +9009,7 @@ __metadata:
     "@react-native/metro-config": 0.75.4
     "@react-native/typescript-config": 0.75.4
     "@types/react": ^18.2.6
+    "@types/react-native-vector-icons": ^6.4.18
     "@types/react-test-renderer": ^18.0.0
     babel-jest: ^29.6.3
     eslint: ^8.19.0
@@ -9570,11 +9590,11 @@ __metadata:
   linkType: hard
 
 "yaml@npm:^2.2.1":
-  version: 2.5.1
-  resolution: "yaml@npm:2.5.1"
+  version: 2.6.0
+  resolution: "yaml@npm:2.6.0"
   bin:
     yaml: bin.mjs
-  checksum: 31275223863fbd0b47ba9d2b248fbdf085db8d899e4ca43fff8a3a009497c5741084da6871d11f40e555d61360951c4c910b98216c1325d2c94753c0036d8172
+  checksum: e5e74fd75e01bde2c09333d529af9fbb5928c5f7f01bfdefdcb2bf753d4ef489a45cab4deac01c9448f55ca27e691612b81fe3c3a59bb8cb5b0069da0f92cf0b
   languageName: node
   linkType: hard
 
