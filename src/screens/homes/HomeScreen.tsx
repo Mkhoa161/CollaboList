@@ -1,22 +1,22 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
-import Container from '../components/Container'
-import { globalStyles } from '../styles/globalStyles'
-import RowComponent from '../components/RowComponent'
-import SectionComponent from '../components/SectionComponent'
-import TextComponent from '../components/TextComponent'
-import { fontFamilies } from '../constants/fontFamilies'
-import TitleComponent from '../components/TitleComponent'
-import { colors } from '../constants/colors'
-import CardComponent from '../components/CardComponent'
+import Container from '../../components/Container'
+import { globalStyles } from '../../styles/globalStyles'
+import RowComponent from '../../components/RowComponent'
+import SectionComponent from '../../components/SectionComponent'
+import TextComponent from '../../components/TextComponent'
+import { fontFamilies } from '../../constants/fontFamilies'
+import TitleComponent from '../../components/TitleComponent'
+import { colors } from '../../constants/colors'
+import CardComponent from '../../components/CardComponent'
 import { Add, ColorSwatch, Edit2, Element4, Notification, SearchNormal1 } from 'iconsax-react-native'
 import IonIcons from 'react-native-vector-icons/Ionicons'
-import TagComponent from '../components/TagComponent'
-import SpaceComponent from '../components/SpaceComponent'
-import CircularComponent from '../components/CircularComponent'
-import CardImageComponent from '../components/CardImageComponent'
-import AvatarGroup from '../components/AvatarGroup'
-import ProgressBarComponent from '../components/ProgressBarComponent'
+import TagComponent from '../../components/TagComponent'
+import SpaceComponent from '../../components/SpaceComponent'
+import CircularComponent from '../../components/CircularComponent'
+import CardImageComponent from '../../components/CardImageComponent'
+import AvatarGroup from '../../components/AvatarGroup'
+import ProgressBarComponent from '../../components/ProgressBarComponent'
 
 const HomeScreen = ({navigation}: any) => {
   return (
@@ -35,7 +35,7 @@ const HomeScreen = ({navigation}: any) => {
             <SectionComponent>
                 <RowComponent 
                     styles={[globalStyles.inputContainer]} 
-                    onPress={() => console.log("Say hi")}>
+                    onPress={() => navigation.navigate('SearchScreen')}>
                     <TextComponent color='#696B6F' text='Search task'/>
                     <SearchNormal1 size={20} color={colors.desc}/>
                 </RowComponent>
