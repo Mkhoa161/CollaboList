@@ -1,11 +1,15 @@
 import { View, Text, StatusBar, SafeAreaView } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import HomeScreen from './src/homes/HomeScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import Router from './src/routers/Router';
 
 const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
-      <HomeScreen />
+      <NavigationContainer>
+        <Router/>
+      </NavigationContainer>
     </SafeAreaView>
   )
 }

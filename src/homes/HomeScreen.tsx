@@ -18,7 +18,7 @@ import CardImageComponent from '../components/CardImageComponent'
 import AvatarGroup from '../components/AvatarGroup'
 import ProgressBarComponent from '../components/ProgressBarComponent'
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}: any) => {
   return (
     <View style={{flex: 1}}>
         <Container>
@@ -128,7 +128,7 @@ const HomeScreen = () => {
                 justifyContent: 'flex-end',
                 alignItems: 'center',
             }}>
-                <TouchableOpacity activeOpacity={1} style={[globalStyles.row, {backgroundColor: colors.blue, padding: 10, borderRadius: 100, width: '80%'}]}>
+                <TouchableOpacity onPress={() => navigation.navigate('AddNewTask')} activeOpacity={1} style={[globalStyles.row, {backgroundColor: colors.blue, padding: 10, borderRadius: 100, width: '80%'}]}>
                     <TextComponent text='Add new task' flex={0}/>
                     <Add size={22} color={colors.white}/>
                 </TouchableOpacity>
