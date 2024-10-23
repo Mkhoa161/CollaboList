@@ -88,7 +88,7 @@ const DateTimePickerComponent = (props: Props) => {
                                 width: '90%',
                                 padding: 20,
                                 borderRadius: 20,}}>
-                        <TextComponent text='Date time picker' color={colors.blue} flex={0} font={fontFamilies.regular} size={16}/>
+                        <TextComponent text={type === 'date' ? 'Select Date' : 'Select Time'} color={colors.blue} flex={0} font={fontFamilies.semiBold} size={16}/>
                         <View>
                             <DatePicker 
                                 mode={type ? type : 'time'} 
@@ -99,7 +99,7 @@ const DateTimePickerComponent = (props: Props) => {
                         </View>
                         <SpaceComponent height={20}/>
                         <ButtonComponent 
-                            title='CONFIRM'
+                            title='Confirm'
                             onPress={() => {
                                 onSelect(date)
                                 setIsVisibleModalDateTime(false)
@@ -107,7 +107,7 @@ const DateTimePickerComponent = (props: Props) => {
                         />
                         <SpaceComponent height={10}/>
                         <ButtonComponent 
-                            title='CLOSE'
+                            title='Close'
                             onPress={() => setIsVisibleModalDateTime(false)}
                         />
                     </View>

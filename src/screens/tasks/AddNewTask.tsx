@@ -87,7 +87,7 @@ const AddNewTask = ({navigation}: any) => {
         </RowComponent>
       </SectionComponent>
       <SectionComponent>
-        <ButtonComponent title='SAVE' onPress={() => handleAddNewTask()}/>
+        <ButtonComponent title='Save' onPress={() => handleAddNewTask()}/>
       </SectionComponent>
     </Container>
   )
