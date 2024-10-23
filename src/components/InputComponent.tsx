@@ -1,10 +1,11 @@
 import { View, Text, TextInput, Touchable, TouchableOpacity } from 'react-native'
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 import TitleComponent from './TitleComponent';
 import RowComponent from './RowComponent';
 import { colors } from '../constants/colors';
 import { globalStyles } from '../styles/globalStyles';
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import { Eye, EyeSlash } from 'iconsax-react-native';
 
 interface Props{
     value: string,
@@ -16,11 +17,14 @@ interface Props{
     allowClear?: boolean,
     multiple?: boolean,
     numberOfLines?: number,
+    isPassword?: boolean,
 }
 
 const InputComponent = (props: Props) => {
   
-  const {value, onChange, placeholder, title, prefix, affix, allowClear, multiple, numberOfLines} = props;
+  const {value, onChange, placeholder, title, prefix, affix, allowClear, multiple, numberOfLines, isPassword} = props;
+  
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <View style={{marginBottom: 16}}>
@@ -38,7 +42,7 @@ const InputComponent = (props: Props) => {
             ]}>
             
             {prefix && prefix}
-            <View style={{flex: 1, paddingLeft: prefix ? 8 : 0, paddingRight: affix ? 8 : 0}}>
+            <View style={{flex: 1, paddingLeft: prefix ? 8 : 0, paddingRight: affix ? 8 : 0, minHeight: 23}}>
                 <TextInput 
                     style={[globalStyles.text, {margin: 0, padding: 0, flex: 1}]}
                     placeholder={placeholder ?? ''} 
@@ -47,7 +51,9 @@ const InputComponent = (props: Props) => {
                     onChangeText={(val: string) => onChange(val)}
                     multiline={multiple}
                     numberOfLines={numberOfLines}
-                    textAlignVertical= 'top'
+                    textAlignVertical='top'
+                    secureTextEntry={isPassword ? !showPassword : false}
+                    autoCapitalize='none'
                 />
             </View>
             {affix && affix}
@@ -57,6 +63,12 @@ const InputComponent = (props: Props) => {
                     <AntDesign name='close' size={20} color={colors.white}/>
                 </TouchableOpacity>
             }
+
+            {isPassword && <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                {showPassword ? 
+                <EyeSlash size={20} color={colors.desc}/> : 
+                <Eye size={20} color={colors.desc}/>}
+                </TouchableOpacity>}
         </RowComponent>
     </View>
   )

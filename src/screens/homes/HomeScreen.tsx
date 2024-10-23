@@ -9,7 +9,7 @@ import { fontFamilies } from '../../constants/fontFamilies'
 import TitleComponent from '../../components/TitleComponent'
 import { colors } from '../../constants/colors'
 import CardComponent from '../../components/CardComponent'
-import { Add, ColorSwatch, Edit2, Element4, Notification, SearchNormal1 } from 'iconsax-react-native'
+import { Add, ColorSwatch, Edit2, Element4, Logout, Notification, SearchNormal1 } from 'iconsax-react-native'
 import IonIcons from 'react-native-vector-icons/Ionicons'
 import TagComponent from '../../components/TagComponent'
 import SpaceComponent from '../../components/SpaceComponent'
@@ -17,21 +17,32 @@ import CircularComponent from '../../components/CircularComponent'
 import CardImageComponent from '../../components/CardImageComponent'
 import AvatarGroup from '../../components/AvatarGroup'
 import ProgressBarComponent from '../../components/ProgressBarComponent'
+import auth from '@react-native-firebase/auth'
 
 const HomeScreen = ({navigation}: any) => {
+  
+  const user = auth().currentUser;
+
   return (
     <View style={{flex: 1}}>
-        <Container>
+        <Container isScroll>
             <SectionComponent>
                 <RowComponent justify='space-between'>
                     <Element4 size={24} color={colors.desc}/>
                     <Notification size={24} color={colors.desc}/>
                 </RowComponent>
-            </SectionComponent>    
+            </SectionComponent>
             <SectionComponent>
-                <TextComponent text='Hi, Khoa' />
-                <TitleComponent text='Be productive today'/>
-            </SectionComponent>   
+                <RowComponent>
+                    <View style={{flex: 1}}>
+                        <TextComponent text={`hi, ${user?.email}`} />
+                        <TitleComponent text='Be productive today'/>
+                    </View>
+                    <TouchableOpacity onPress={async () => auth().signOut()}>
+                        <Logout size={22} color='coral'/>
+                    </TouchableOpacity>
+                </RowComponent>   
+            </SectionComponent>    
             <SectionComponent>
                 <RowComponent 
                     styles={[globalStyles.inputContainer]} 
