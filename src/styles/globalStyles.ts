@@ -52,7 +52,7 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.2)', 
         justifyContent: 'center', 
         alignItems: 'center',
-        marginBottom: 16,
+        marginBottom: 7,
     },
 
 });

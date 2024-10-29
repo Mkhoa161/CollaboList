@@ -8,18 +8,16 @@ import SpaceComponent from './src/components/SpaceComponent';
 
 const App = () => {
   return (
-    <View style={{flex: 1, backgroundColor: colors.bgColor}}>
+    <>
       <StatusBar
         translucent={true}   // Makes the status bar transparent
-        backgroundColor={colors.bgColor}  // Ensures transparency
+        backgroundColor='transparent'  // Ensures transparency
         barStyle="light-content"  // Changes text/icons to dark color (you can use 'light-content' if needed)
       />
-      <SafeAreaView style={{flex: 1, backgroundColor: colors.bgColor}}>
         <NavigationContainer>
           <Router/>
         </NavigationContainer>
-      </SafeAreaView>
-    </View>
+    </>
   )
 }
 

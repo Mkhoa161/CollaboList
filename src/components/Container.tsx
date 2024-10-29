@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Touchable, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, Touchable, TouchableOpacity, SafeAreaView } from 'react-native'
 import React, { ReactNode } from 'react'
 import { globalStyles } from '../styles/globalStyles';
 import { useNavigation } from '@react-navigation/native';
@@ -23,31 +23,34 @@ const Container = (props: Props) => {
     const navigation: any = useNavigation();
 
     return (
-        <View style={[globalStyles.container]}>
-            <RowComponent styles={{marginBottom: 10}}>
-                {back && (
-                    <TouchableOpacity onPress={() => navigation.goBack()}>
-                        <ArrowLeft2 size={24} color={colors.text}/>
-                    </TouchableOpacity>
-                )}
-                <View style={{flex: 1, zIndex: -1}}>
-                    {title && (
-                        <TextComponent 
-                            flex={0}
-                            font={fontFamilies.bold}
-                            size={16}
-                            text={title}
-                            styles={{textAlign: 'center', marginLeft: back ? -24 : 0}}
-                        />
+        <SafeAreaView style={{flex: 1, backgroundColor: colors.bgColor}}>    
+            <View style={[globalStyles.container]}>
+                <RowComponent styles={{marginBottom: 10}}>
+                    {back && (
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <ArrowLeft2 size={24} color={colors.text}/>
+                        </TouchableOpacity>
                     )}
-                </View>
-            </RowComponent>
-            {isScroll ? (
-                <ScrollView style={{flex: 1}}>{children}</ScrollView>
-            ) : (
-                <View style={{flex: 1}}>{children}</View>
-            )}
-        </View>
+                    <View style={{flex: 1, zIndex: -1}}>
+                        {title && (
+                            <TextComponent 
+                                flex={0}
+                                font={fontFamilies.bold}
+                                size={16}
+                                text={title}
+                                styles={{textAlign: 'center', marginLeft: back ? -24 : 0}}
+                            />
+                        )}
+                    </View>
+                </RowComponent>
+                {isScroll ? (
+                    <ScrollView style={{flex: 1}}>{children}</ScrollView>
+                ) : (
+                    <View style={{flex: 1}}>{children}</View>
+                )}
+            </View>
+        </SafeAreaView>
+
     )
 }
 
