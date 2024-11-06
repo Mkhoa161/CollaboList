@@ -15,18 +15,18 @@
 - **UI/UX Design**: Crafted prototypes and UI designs with **Figma** for an intuitive user experience.
 
 ### Login Screen
-<img src="images/loginscreen.png" width="200" style="display:inline-block; margin-right:10"/>
+<img src="images/loginscreen.png" width="200" style="display:inline-block; margin-right:10px;"/>
 
 ### Signup Screen
-<img src="images/signupscreen.png" width="200" style="display:inline-block"/>
+<img src="images/signupscreen.png" width="200" style="display:inline-block; margin-right:10px;"/>
 
 <br/>
 
 ### Home Screen
-<img src="images/homescreen.png" width="200" style="display:inline-block; margin-right:10"/>
+<img src="images/homescreen.png" width="200" style="display:inline-block; margin-right:10px;"/>
 
 ### Add Task Screen
-<img src="images/addnewtask.png" width="200" style="display:inline-block"/>
+<img src="images/addnewtask.png" width="200" style="display:inline-block; margin-right:10px;"/>
 
 ## **Technologies Used**
 - **Frontend**: React Native, TypeScript, HTML, CSS
