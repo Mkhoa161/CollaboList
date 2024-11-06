@@ -116,7 +116,7 @@ const HomeScreen = ({navigation}: any) => {
                                 <TextComponent line={3} text={tasks[0].description} size={13}/>
                                 <View style={{marginVertical: 34}}>
                                     {tasks[0].uids && <AvatarGroup uids={tasks[0].uids}/>}
-                                    {tasks[0].progress && <ProgressBarComponent percent='70%' color='#0AACFF' size='large'/>}
+                                    {tasks[0].progress && (tasks[0].progress as number) >= 0 && <ProgressBarComponent percent={`${Math.floor(tasks[0].progress * 100)}%`} color='#0AACFF' size='large'/>}
                                 </View>
                                 <TextComponent 
                                     text={`Due, ${HandleDateTime.YearDateString((tasks[0].dueDate as unknown as Timestamp).toDate())}`} 
@@ -146,7 +146,7 @@ const HomeScreen = ({navigation}: any) => {
                                             tasks[1].uids && <AvatarGroup uids={tasks[1].uids}/>
                                         }
                                         {
-                                            tasks[1].progress && <ProgressBarComponent percent='40%' color='#A2F068'/>
+                                            tasks[1].progress && (tasks[1].progress as number) >= 0 && <ProgressBarComponent percent={`${Math.floor(tasks[1].progress * 100)}%`} color='#A2F068'/>
                                         }
                                     </View>
                                 </CardImageComponent>
