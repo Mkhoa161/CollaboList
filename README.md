@@ -18,6 +18,11 @@
 :-------------------------:|:-------------------------:
 ![](images/loginscreen.png)  |  ![](images/signupscreen.png)
 
+| Login Screen            | Signup Screen            |
+|-------------------------|--------------------------|
+| <img src="images/loginscreen.png" width="300"/>  | <img src="images/signupscreen.png" width="300"/> |
+
+
 ### Login Screen
 <img src="images/loginscreen.png" width="200" style="display:inline-block; margin-right:10px;"/>
 
