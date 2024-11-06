@@ -179,7 +179,7 @@ const HomeScreen = ({navigation}: any) => {
                     <RowComponent>
                         <CircularComponent value={40} radius={32} size={20}/>
                         <View style={{flex: 1, justifyContent: 'center', paddingLeft: 12}}>
-                            <TextComponent text='Title of task'/>
+                            <TextComponent text='Handle API Calls'/>
                         </View>
                     </RowComponent>
                 </CardComponent>
