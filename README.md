@@ -20,7 +20,7 @@
 
 | Home Screen             | Add Task Screen            |
 |-------------------------|--------------------------|
-| <img src="images/homescreen.png" width="300"/>  | <img src="images/addnewtaskscreen.png" width="300"/> |
+| <img src="images/homescreen.png" width="300"/>  | <img src="images/addnewtask.png" width="300"/> |
 
 
 ## **Technologies Used**
