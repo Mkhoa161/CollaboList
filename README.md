@@ -14,6 +14,18 @@
 - **Responsive UI**: Designed a smooth, user-friendly interface using **HTML**, **CSS**, and **TypeScript**.
 - **UI/UX Design**: Crafted prototypes and UI designs with **Figma** for an intuitive user experience.
 
+### Login Screen
+![Login Screen](images/loginscreen.png)
+
+### Signup Screen
+![Signup Screen](images/signupscreen.png)
+
+### Home Screen
+![Home Screen](images/homescreen.png)
+
+### Add Task Screen
+![Home Screen](images/addnewtask.png)
+
 ## **Technologies Used**
 - **Frontend**: React Native, TypeScript, HTML, CSS
 - **Backend**: Firebase (Authentication, Firestore, Storage)
