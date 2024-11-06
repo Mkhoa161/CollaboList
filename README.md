@@ -14,8 +14,7 @@
 - **Responsive UI**: Designed a smooth, user-friendly interface using **HTML**, **CSS**, and **TypeScript**.
 - **UI/UX Design**: Crafted prototypes and UI designs with **Figma** for an intuitive user experience.
 
-   Login Screen             |     Signup Screen
-:-------------------------:|:-------------------------:
+   Login Screen              |          Signup Screen
 ![](images/loginscreen.png)  |  ![](images/signupscreen.png)
 
 ### Login Screen
