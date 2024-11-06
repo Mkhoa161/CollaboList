@@ -19,4 +19,8 @@ export class HandleDateTime {
 
         return `${hours} ${ampm}`;
     }
+
+    static YearDateString = (date: Date) => {
+        return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+    };
 }

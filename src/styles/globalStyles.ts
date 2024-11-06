@@ -21,6 +21,10 @@ export const globalStyles = StyleSheet.create({
         color: colors.text,
 
     },
+    
+    documentImg: {
+        marginHorizontal: 4,
+    },
 
     section: {
         marginBottom: 16,

@@ -20,6 +20,7 @@ import ProgressBarComponent from '../../components/ProgressBarComponent'
 import auth from '@react-native-firebase/auth'
 import firestore, { Timestamp } from '@react-native-firebase/firestore'
 import { TaskModel } from '../../models/TaskModel'
+import { HandleDateTime } from '../../utils/handleDateTime'
 
 const HomeScreen = ({navigation}: any) => {
   
@@ -112,13 +113,13 @@ const HomeScreen = ({navigation}: any) => {
                                     <Edit2 size={20} color={colors.white} />
                                 </TouchableOpacity>
                                 <TitleComponent text={tasks[0].title} size={18}/>
-                                <TextComponent text={tasks[0].description} size={13}/>
+                                <TextComponent line={3} text={tasks[0].description} size={13}/>
                                 <View style={{marginVertical: 34}}>
                                     {tasks[0].uids && <AvatarGroup uids={tasks[0].uids}/>}
                                     {tasks[0].progress && <ProgressBarComponent percent='70%' color='#0AACFF' size='large'/>}
                                 </View>
                                 <TextComponent 
-                                    text={`Due, ${(tasks[0].dueDate as unknown as Timestamp).toDate()}`} 
+                                    text={`Due, ${HandleDateTime.YearDateString((tasks[0].dueDate as unknown as Timestamp).toDate())}`} 
                                     size={12} 
                                     color={colors.desc}/>
                             </CardImageComponent>
