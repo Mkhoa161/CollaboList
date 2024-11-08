@@ -2,7 +2,7 @@ import { View, Text, Button } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import TextComponent from '../../components/TextComponent'
 import Container from '../../components/Container'
-import { TaskModel } from '../../models/TaskModel'
+import { Attachment, TaskModel } from '../../models/TaskModel'
 import SectionComponent from '../../components/SectionComponent'
 import InputComponent from '../../components/InputComponent'
 import { AttachSquare, User } from 'iconsax-react-native'
@@ -18,6 +18,7 @@ import TitleComponent from '../../components/TitleComponent'
 import DocumentPicker, {DocumentPickerResponse, DocumentPickerOptions} from 'react-native-document-picker'
 import storage from '@react-native-firebase/storage';
 import RNFS from 'react-native-fs';
+import UploadFileComponent from '../../components/UploadFileComponent'
 
 const initValue: TaskModel = {
   title: '',
@@ -26,16 +27,14 @@ const initValue: TaskModel = {
   start: new Date(),
   end: new Date(),
   uids: [],
-  fileUrls: [],
+  attachments: [],
 };
 
 const AddNewTask = ({navigation}: any) => {
   const [taskDetail, setTaskDetail] = useState<TaskModel>(initValue);
   const [userSelect, setUserSelect] = useState<SelectModel[]>([]);
-  const [attachments, setAttachments] = useState<DocumentPickerResponse[]>([]);
-  const [attachmentsUrl, setAttachmentsUrl] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-
+  const [attachments, setAttachments] = useState<Attachment[]>([]);
+  
   useEffect(() => {
     //createFakeData();
     handleGetAllUsers();
@@ -105,7 +104,7 @@ const AddNewTask = ({navigation}: any) => {
   }
 
   const handleAddNewTask = async () => {
-    const data = {...taskDetail, fileUrls: attachmentsUrl};
+    const data = {...taskDetail, attachments};
 
     await firestore().collection('task').add(data).then(() => {
       console.log('A new task has been addeed!');
@@ -113,35 +112,6 @@ const AddNewTask = ({navigation}: any) => {
     }).catch(error => console.log(error));
   }
 
-  const handlePickerDocument = () => {
-    DocumentPicker.pick({}).then(res => {
-      setAttachments(res);
-      console.log(res);
-
-      res.forEach(item => handleUploadFileToStorage(item));
-    }).catch(error => {
-      console.log(error);
-    })
-  }
-
-  const handleUploadFileToStorage = async (item: DocumentPickerResponse) => {
-    const filename = item.name ?? `file${Date.now()}`;
-    const path = `documents/${filename}`;
-
-    const items = [...attachmentsUrl];
-
-    const destPath = `${RNFS.TemporaryDirectoryPath}/${filename}`;
-    await RNFS.copyFile(item.uri, destPath);
-
-    await storage().ref(path).putFile(destPath);
-
-    await storage().ref(path).getDownloadURL().then(url => {
-      items.push(url);
-      setAttachmentsUrl(items);
-    }).catch(error => {console.log(error)});
-  }
-
-  console.log(attachmentsUrl);
 
   return (
     <View style={{flex: 1}}>
@@ -201,10 +171,10 @@ const AddNewTask = ({navigation}: any) => {
           />
 
           <View>
-            <RowComponent justify='flex-start' onPress={handlePickerDocument}>
-              <TitleComponent text='Attachments'/>
+            <RowComponent justify='flex-start' styles={{alignItems: 'center'}}>
+              <TitleComponent text='Attachments' styles={{paddingTop: 4}}/>
               <SpaceComponent width={8}/>
-              <AttachSquare size={20} color={colors.white} style={{marginBottom: 2}}/>
+              <UploadFileComponent size={21} onUpload={file => file && setAttachments([...attachments, file])}/>
             </RowComponent>
 
             {attachments.length > 0 && attachments.map((item, index) => 
