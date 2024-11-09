@@ -18,11 +18,12 @@ interface Props{
     multiple?: boolean,
     numberOfLines?: number,
     isPassword?: boolean,
+    color?: string,
 }
 
 const InputComponent = (props: Props) => {
   
-  const {value, onChange, placeholder, title, prefix, affix, allowClear, multiple, numberOfLines, isPassword} = props;
+  const {value, onChange, placeholder, title, prefix, affix, allowClear, multiple, numberOfLines, isPassword, color} = props;
   
   const [showPassword, setShowPassword] = useState(false);
 
@@ -38,6 +39,7 @@ const InputComponent = (props: Props) => {
                     paddingVertical: 14,
                     paddingHorizontal: 10,
                     alignItems: 'flex-start',
+                    backgroundColor: color ?? colors.gray,
                 },
             ]}>
             
