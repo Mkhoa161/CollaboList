@@ -18,7 +18,7 @@
 |-------------------------|--------------------------|
 | <img src="images/loginscreen.png" width="300"/>  | <img src="images/signupscreen.png" width="300"/> |
 
-| Home Screen             | Add Task Screen            |
+| Home Screen             | Task Detail Screen            |
 |-------------------------|--------------------------|
 | <img src="images/homescreen.png" width="300"/>  | <img src="images/task_detail.png" width="300"/> |
 
