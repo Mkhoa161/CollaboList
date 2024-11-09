@@ -20,8 +20,12 @@
 
 | Home Screen             | Add Task Screen            |
 |-------------------------|--------------------------|
-| <img src="images/homescreen.png" width="300"/>  | <img src="images/addnewtask.png" width="300"/> |
+| <img src="images/homescreen.png" width="300"/>  | <img src="images/task_detail.png" width="300"/> |
 
+
+| Add Task Screen             | Add Task Screen            |
+|-------------------------|--------------------------|
+| <img src="images/addnewtask.png" width="300"/>  | <img src="images/addnewtask_1.png" width="300"/> |
 
 ## **Technologies Used**
 - **Frontend**: React Native, TypeScript, HTML, CSS
